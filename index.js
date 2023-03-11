@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '8001');
 app.set('port', port);
-const ip = '192.168.0.107'; // replace with your desired IP address
+// const ip = '192.168.0.107'; // replace with your desired IP address
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
@@ -75,5 +75,5 @@ app.post('/api/data', async (req, res) => {
 
 // Start server on specific IP address and port
 app.listen(port, () => {
-  console.log(`Server listening at http://${ip}:${port}`);
+  console.log(`Example app listening at http://localhost:${port}`);
 });
