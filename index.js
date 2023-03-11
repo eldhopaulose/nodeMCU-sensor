@@ -3,9 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = normalizePort(process.env.PORT || '8001');
+const port = normalizePort(process.env.PORT || '7001');
 app.set('port', port);
-// const ip = '192.168.0.107'; // replace with your desired IP address
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
@@ -21,6 +20,7 @@ function normalizePort(val) {
 
   return false;
 }
+
 // Connection URL and database name
 const url = 'mongodb+srv://eldhopaulose0485:xyzel_025@cluster0.4sjqm.mongodb.net/NodeMcu?retryWrites=true&w=majority';
 
@@ -50,6 +50,24 @@ const Sensor = mongoose.model('Sensor', SensorSchema);
 
 // Use body-parser middleware to parse request body
 app.use(bodyParser.json());
+
+// Set up a route to handle POST requests from the sensor
+// app.post('/api/data', (req, res) => {
+//     // Create new document from request body
+//     const sensorData = new Sensor(req.body);
+  
+//     // Save document to database
+//     sensorData.save()
+//       .then((data) => {
+//         console.log("Data inserted:", data);
+//         res.sendStatus(200);
+//       })
+//       .catch((err) => {
+//         res.sendStatus(500);
+//         console.error(err);
+//       });
+//   });
+  
 
 app.post('/api/data', async (req, res) => {
     try {
