@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const cors = require('cors');
+
 
 
 const app = express();
@@ -40,7 +40,7 @@ const SensorSchema = new mongoose.Schema({
 // Create a model based on the schema
 const Sensor = mongoose.model('Sensor', SensorSchema);
 
-app.use(cors());
+
 
 // Connect to MongoDB Atlas
 mongoose.connect(uri, options)
