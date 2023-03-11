@@ -74,6 +74,6 @@ app.post('/api/data', async (req, res) => {
 
 
 // Start server on specific IP address and port
-app.listen(port, ip, () => {
+app.listen(port, () => {
   console.log(`Server listening at http://${ip}:${port}`);
 });
