@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const port = normalizePort(process.env.PORT || '7001');
@@ -50,6 +51,7 @@ const SensorSchema = new mongoose.Schema({
 // Create model from schema
 const Sensor = mongoose.model('Sensor', SensorSchema);
 
+app.use(cors());
 // Use body-parser middleware to parse request body
 app.use(bodyParser.json());
 
