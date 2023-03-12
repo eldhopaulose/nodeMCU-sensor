@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 const port = process.env.PORT || 3000; // Use environment variable or default port
