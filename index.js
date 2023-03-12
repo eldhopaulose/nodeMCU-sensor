@@ -71,7 +71,12 @@ app.post('/api/data', async (req, res) => {
       console.log('Previous data deleted:', previousData);
   
       // Create new document from request body
-      const sensorData = new Sensor(req.body);
+      const sensorData = new Sensor({
+        temperature: req.body.temperature,
+        humidity: req.body.humidity,
+        soil_moisture: req.body.soil_moisture,
+        ph: req.body.ph
+      });
   
       // Save document to database
       const savedData = await sensorData.save();
