@@ -39,13 +39,22 @@ app.use(bodyParser.json());
 
 // Set up a route to handle POST requests from the sensor
 app.post('/api/data', async (req, res) => {
+  const { temperature, humidity, soil_moisture, ph } = req.body;
+
+  // Create a new data object with the received data
+  const newData = new Data({
+    temperature,
+    humidity,
+    soil_moisture,
+    ph
+  });
   try {
     // Find and delete the previous document
     const previousData = await Sensor.findOneAndDelete();
     console.log('Previous data deleted:', previousData);
 
     // Create new document from request body
-    const sensorData = new Sensor(req.body);
+    const sensorData = new Sensor(newData);
 
     // Save document to database
     const savedData = await sensorData.save();
