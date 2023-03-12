@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 
 const app = express();
 
@@ -37,7 +36,6 @@ const Sensor = mongoose.model('Sensor', SensorSchema);
 
 // Use body-parser middleware to parse request body
 app.use(bodyParser.json());
-app.use(cors());
 
 // Connect to MongoDB Atlas
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
