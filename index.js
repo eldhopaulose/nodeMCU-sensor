@@ -42,7 +42,7 @@ app.post('/api/data', async (req, res) => {
   const { temperature, humidity, soil_moisture, ph } = req.body;
 
   // Create a new data object with the received data
-  const newData = new Data({
+  const newData = new Sensor({
     temperature,
     humidity,
     soil_moisture,
