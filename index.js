@@ -35,6 +35,7 @@ const SensorSchema = new mongoose.Schema({
 const Sensor = mongoose.model('Sensor', SensorSchema);
 
 // Use body-parser middleware to parse request body
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Connect to MongoDB Atlas
