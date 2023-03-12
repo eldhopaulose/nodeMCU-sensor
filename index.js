@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const ip = process.env.IP || '0.0.0.0';
 
 // Connection URL and database name
-const url = process.env.MONGODB_URI;
+const url = 'mongodb+srv://eldhopaulose0485:xyzel_025@cluster0.4sjqm.mongodb.net/NodeMcu?retryWrites=true&w=majority';
 
 // Set up default mongoose connection
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
