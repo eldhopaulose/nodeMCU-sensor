@@ -79,7 +79,7 @@ app.use(bodyParser.json());
 app.post('/api/data', async (req, res) => {
     try {
       // Find and delete the previous document
-      const previousData = await Sensor.findOneAndDelete();
+      const previousData = await Sensor.deleteMany();
       console.log('Previous data deleted:', previousData);
   
       // Create new document from request body
