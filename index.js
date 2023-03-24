@@ -45,6 +45,9 @@ const SensorSchema = new mongoose.Schema({
   humidity: Number,
   soil_moisture: Number,
   ph: Number,
+  N: Number,
+  P: Number,
+  K: Number
   
 });
 
