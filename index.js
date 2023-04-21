@@ -49,7 +49,7 @@ const SensorSchema = new mongoose.Schema({
   P: Number,
   K: Number
   
-});
+}, { timestamps: true });
 
 // Create model from schema
 const Sensor = mongoose.model('Sensor', SensorSchema);
